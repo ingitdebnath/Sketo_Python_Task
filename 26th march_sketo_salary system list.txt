@@ -1,0 +1,91 @@
+
+var_name=str(input("Emp name -"))
+var_id=str(input("Emp ID -"))
+var_salary=int(input("Emp salary (monthly salary)-"))
+var_leave=int(input("Emp leave"))
+var_tds=int(input("Emp TDS % (cut)-"))
+var_bonus=int(input("Emp Bonus (add)-"))
+var_month=int(input("Month--"))
+var_year=int(input("year--"))
+
+list_month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+if (var_month==1) :
+  var_numberOfDays=31
+  var_monthStr=list_month[0]
+elif(var_month==3) :
+  var_numberOfDays=31
+  var_monthStr=list_month[2]
+elif(var_month==4) :
+  var_numberOfDays=30
+  var_monthStr=list_month[3]
+elif(var_month==5) :
+  var_numberOfDays=31
+  var_monthStr=list_month[4]
+elif(var_month==6) :
+  var_numberOfDays=30
+  var_monthStr=list_month[5]
+elif(var_month==7) :
+  var_numberOfDays=31
+  var_monthStr=list_month[6]
+elif(var_month==8) :
+  var_numberOfDays=31
+  var_monthStr=list_month[7]
+elif(var_month==9) :
+  var_numberOfDays=30
+  var_monthStr=list_month[8]
+elif(var_month==10) :
+  var_numberOfDays=31
+  var_monthStr=list_month[9]
+elif(var_month==11) :
+  var_numberOfDays=30
+  var_monthStr=list_month[10]
+elif(var_month==12) :
+  var_numberOfDays=31
+  var_monthStr=list_month[11]
+else:
+  var_monthStr=list_month[1]
+  if(var_year%4==0) :
+    var_numberOfDays=29
+  else:
+    var_numberOfDays=28
+
+print("Date -:",var_monthStr,"/",var_year)
+
+print("Emp name -",var_name)
+print("Emp ID -",var_id)
+print("Emp salary (monthly salary)-",var_salary)
+print("Emp salary (Yearly salary)-",var_salary*12)
+
+#Leave Amount = number of leaves * (monthly salary/number of day in month)
+var_Leave1= var_leave*(var_salary/var_numberOfDays)
+print("leave amount for",var_leave,"days -: ",var_Leave1)
+
+var_tdsNew= (var_tds/100) * var_salary
+
+#final salary is monthly salary plus bonus minus monthly TDS minus monthly leave amount
+var_FINAL=var_salary+var_bonus-var_tdsNew-var_Leave1
+print("final pay salary is ",var_FINAL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
